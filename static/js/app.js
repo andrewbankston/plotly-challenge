@@ -58,10 +58,7 @@ function optionChanged(idSel) {
         };
         var barData = [traceBar];
 
-        var barLayout = {
-            title: "OTU abundance"
-        };
-        Plotly.newPlot("bar", barData, barLayout);
+        Plotly.newPlot("bar", barData);
 
         var traceBubble = {
             x: ids,
@@ -75,7 +72,6 @@ function optionChanged(idSel) {
         var bubbleData = [traceBubble];
 
         var bubbleLayout = {
-            title: "OTU bubbles",
             xaxis: { title: "OTU ID" }
         };
         Plotly.newPlot("bubble", bubbleData, bubbleLayout);
