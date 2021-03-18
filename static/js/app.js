@@ -19,7 +19,8 @@ console.log(sampleData);
 
 function optionChanged(idSel) {
     console.log(idSel);
-    var table = d3.select("#sample-metadata")
+    var table = d3.select("#sample-metadata");
+    table.html("");
     var metadata = {};
     bactData.then((data) => {
         var tableFilter = data.metadata.filter(datum => datum.id === parseInt(idSel))[0];
@@ -76,29 +77,3 @@ function optionChanged(idSel) {
         Plotly.newPlot("bubble", bubbleData, bubbleLayout);
     });
 };
-
-
-// function init() {
-//     data = [{
-
-//     }]
-// }
-
-// function updatePlotly() {
-
-//     var dropdownMenu - d3.select("#selDataset");
-//     var id = dropdownMenu.node().value;
-// }
-
-// function filterSamples(sample) {
-//     return sample.samples.id === id;
-// }
-
-// d3.json("samples.json").then((data) => {
-//     var dataset = data.filter(filterSamples);
-//     var 
-// })
-
-// var trace1 = {
-//     x: data.samples.sample_values,
-// }
