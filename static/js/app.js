@@ -17,6 +17,10 @@ bactData.then((data) => {
 
 console.log(sampleData);
 
+function init() {
+    optionChanged("940");
+};
+
 function optionChanged(idSel) {
     console.log(idSel);
     var table = d3.select("#sample-metadata");
@@ -77,3 +81,5 @@ function optionChanged(idSel) {
         Plotly.newPlot("bubble", bubbleData, bubbleLayout);
     });
 };
+
+init();
