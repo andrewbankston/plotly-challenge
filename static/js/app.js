@@ -1,8 +1,6 @@
-var sampleData = [];
-
 var menu = d3.select("#selDataset");
 
-const bactData = d3.json("./samples.json")
+const bactData = d3.json("./samples.json");
 
 bactData.then((data) => {
     console.log(data.samples);
@@ -10,12 +8,7 @@ bactData.then((data) => {
         var option = menu.append("option");
         option.text(name);
     });
-    data.samples.forEach(sample => {
-        sampleData.push(sample);
-    })
 });
-
-console.log(sampleData);
 
 function init() {
     optionChanged("940");
@@ -25,7 +18,6 @@ function optionChanged(idSel) {
     console.log(idSel);
     var table = d3.select("#sample-metadata");
     table.html("");
-    var metadata = {};
     bactData.then((data) => {
         var tableFilter = data.metadata.filter(datum => datum.id === parseInt(idSel))[0];
         console.log(tableFilter);
